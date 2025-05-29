@@ -48,10 +48,15 @@ function Hero() {
                                 </a>
                                 <a
                                     href="#projects"
-                                    className="px-8 py-3 border border-indigo-500 rounded-lg font-medium hover:bg-indigo-500/10 transition flex items-center"
+                                    className="px-8 py-3 rounded-lg font-medium hover:bg-gradient-to-r from-orange-600 to-indigo-700 transition flex items-center relative group"
                                 >
-                                    <FontAwesomeIcon icon={faEye} className="mr-2" />
-                                    View Work
+                                    <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-orange-600 to-indigo-700 p-[2px] group-hover:p-[5px] transition-all">
+                                        <span className="block h-full w-full bg-[var(--dark)] rounded-md"></span>
+                                    </span>
+                                    <span className="relative z-10 flex items-center">
+                                        <FontAwesomeIcon icon={faEye} className="mr-2" />
+                                        View Work
+                                    </span>
                                 </a>
                             </div>
 
