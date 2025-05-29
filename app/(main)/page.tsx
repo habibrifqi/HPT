@@ -1,119 +1,87 @@
 
+import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <>
-       {/* <!-- Header/Navigation --> */}
-        <Navbar />
+      {/* <!-- Header/Navigation --> */}
+      <Navbar />
 
-        {/* <!-- About Section --> */}
-    <section id="about" className="h-screen py-20 glass">
-       <h1>asdasd</h1>
+      {/* <!-- About Section --> */}
+      <Hero />
+
+
+
+      {/* <!-- Skills Section --> */}
+      <section id="about" className="py-20 glass">
+        <div className="container mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" data-aos="fade-up">
+                <span className="gradient-text">About Me</span>
+            </h2>
+            
+            <div className="flex flex-col lg:flex-row items-center">
+                <div className="lg:w-1/3 mb-8 lg:mb-0 flex justify-center" data-aos="fade-right">
+                    <div className="relative w-64 h-64 gradient-border">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-600/20 rounded-lg opacity-20 blur-xl"></div>
+                        {/* <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=2070&auto=format&fit=crop" alt="About" className="relative z-10 w-full h-full rounded-lg object-cover"> */}
+                    </div>
+                </div>
+                
+                <div className="lg:w-2/3 lg:pl-12" data-aos="fade-left">
+                    <h3 className="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p className="mb-6 text-lg opacity-90">
+                        I'm a passionate full-stack developer with 7+ years of experience creating modern web applications. I specialize in React, Node.js, and cloud-native architectures, delivering scalable solutions that drive business growth.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 card-hover" data-aos="zoom-in">
+                            <h4 className="font-semibold mb-2 flex items-center">
+                                <i className="fas fa-graduation-cap mr-2 text-indigo-400"></i> Education
+                            </h4>
+                            <p className="font-medium">MSc in Computer Science</p>
+                            <p className="text-sm text-slate-400">Stanford University, 2016</p>
+                        </div>
+                        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 card-hover" data-aos="zoom-in" data-aos-delay="100">
+                            <h4 className="font-semibold mb-2 flex items-center">
+                                <i className="fas fa-briefcase mr-2 text-indigo-400"></i> Experience
+                            </h4>
+                            <p className="font-medium">Lead Developer</p>
+                            <p className="text-sm text-slate-400">TechVision Inc., 2019-Present</p>
+                        </div>
+                    </div>
+                    
+                    <p className="mb-6 opacity-90">
+                        My approach combines technical excellence with creative problem-solving. I thrive in collaborative environments and enjoy mentoring junior developers. When I'm not coding, you'll find me hiking, playing chess, or experimenting with new coffee brewing techniques.
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4">
+                        <a href="#" className="inline-flex items-center px-6 py-3 border border-indigo-500 rounded-lg font-medium hover:bg-indigo-500/10 transition">
+                            <i className="fas fa-download mr-2"></i> Download CV
+                        </a>
+                        <a href="#contact" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition">
+                            <i className="fas fa-handshake mr-2"></i> Hire Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    {/* <!-- Skills Section --> */}
-    <section id="skills" className="h-screen py-20">
+
+
+
+
+
+
+
+      {/* <section id="skills" className="h-screen">
        <h1>asdsda</h1>
-    </section>
+    </section> */}
+     
+
 
     </>
-    // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-    //   <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-    //     <Image
-    //       className="dark:invert"
-    //       src="/next.svg"
-    //       alt="Next.js logo"
-    //       width={180}
-    //       height={38}
-    //       priority
-    //     />
-    //     <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-    //       <li className="mb-2 tracking-[-.01em]">
-    //         Get started by editing{" "}
-    //         <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-    //           app/page.tsx
-    //         </code>
-    //         .
-    //       </li>
-    //       <li className="tracking-[-.01em]">
-    //         Save and see your changes instantly.
-    //       </li>
-    //     </ol>
 
-    //     <div className="flex gap-4 items-center flex-col sm:flex-row">
-    //       <a
-    //         className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-    //         href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         <Image
-    //           className="dark:invert"
-    //           src="/vercel.svg"
-    //           alt="Vercel logomark"
-    //           width={20}
-    //           height={20}
-    //         />
-    //         Deploy now
-    //       </a>
-    //       <a
-    //         className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-    //         href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Read our docs
-    //       </a>
-    //     </div>
-    //   </main>
-    //   <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-    //     <a
-    //       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-    //       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <Image
-    //         aria-hidden
-    //         src="/file.svg"
-    //         alt="File icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Learn
-    //     </a>
-    //     <a
-    //       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-    //       href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <Image
-    //         aria-hidden
-    //         src="/window.svg"
-    //         alt="Window icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Examples
-    //     </a>
-    //     <a
-    //       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-    //       href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <Image
-    //         aria-hidden
-    //         src="/globe.svg"
-    //         alt="Globe icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Go to nextjs.org →
-    //     </a>
-    //   </footer>
-    // </div>
   );
 }

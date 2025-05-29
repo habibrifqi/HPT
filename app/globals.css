@@ -3,10 +3,18 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+
+@theme {
+
+  --color-habib: #ff5f1f;
+  --color-habib2: #0b0bff;
+}
  /* Custom Styles */
  :root {
-  --primary: #6366f1;
-  --secondary: #8b5cf6;
+  /* --primary: #6366f1;
+  --secondary: #8b5cf6; */
+  --primary: #ff5f1f;  /* Neon Orange */
+  --secondary: #0b0bff; /* Ultramarine */
   --dark: #0f172a;
   --darker: #020617;
 }
@@ -204,4 +212,25 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+.typing-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: black;
+}
+
+.blink {
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

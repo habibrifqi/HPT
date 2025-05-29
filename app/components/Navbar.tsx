@@ -16,7 +16,9 @@ function Navbar() {
     const navLinks: NavLink[] = [
       { href: '#home', label: 'Home' },
       { href: '#about', label: 'About' },
-      { href: '#skills', label: 'skills' },
+      { href: '#skills', label: 'Skills' },
+      { href: '#projects', label: 'Projects' },
+      { href: '#testimonials', label: 'Testimonials' },
       { href: '#contact', label: 'Contact' }
     ];
     const navRef = useRef<HTMLElement>(null);
