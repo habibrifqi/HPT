@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Sans } from "next/font/google";
 import "./globals.css";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import AOSInitializer from "./components/AOSInitializer";
 config.autoAddCss = false
 
 const geistSans = Geist({
@@ -30,7 +31,9 @@ export default function RootLayout({
         <body
         className="gradient-bg min-h-screen text-gray-300 font-sans antialiased"
       >
-        {children}
+        <AOSInitializer>
+          {children}
+        </AOSInitializer>
       </body>
       {/* <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
