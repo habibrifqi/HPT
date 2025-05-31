@@ -28,22 +28,14 @@ function Aboutme() {
                         <div className="lg:w-2/5 relative" data-aos="fade-right">
                             <div className="relative w-full max-w-md mx-auto">
                                 <div className="absolute -inset-4 rounded-2xl bg-gradient-to-tr from-orange-600/30 to-indigo-700/30 blur-lg opacity-75"></div>
-                                <div className="relative rounded-xl overflow-hidden border-2 border-slate-700/50">
+                                <div className="relative w-full aspect-square rounded-xl overflow-hidden border-2 border-slate-700/50">
                                     <Image
                                         src="https://scontent.fsrg10-1.fna.fbcdn.net/v/t1.6435-9/33115509_1249449891855998_4707836291641769984_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeExPJhlQ5-a5knuTg3Xyuy5nUgRa2DOzDadSBFrYM7MNrvifRMqOo-4zm1noHp84ibyrDEUilwkhnBi_UipQ9li&_nc_ohc=fx4P_VN8RroQ7kNvwHd5ved&_nc_oc=Adlg7DvuGt7DghC3PAJ9Lwfp94zRlPDk_iCHwf7bD2u7XU4WKMjmT4r7bUDUNctlOms&_nc_zt=23&_nc_ht=scontent.fsrg10-1.fna&_nc_gid=ctGYC9YsOvVPSAIP_zwlXA&oh=00_AfHOaIXZo1OWolikGAwrczEMZ1ZjGdeWejwuur-UGGuxTg&oe=684048FD"
                                         alt="Profile"
+                                        fill
                                         className="w-full h-auto object-cover aspect-square"
                                     />
                                 </div>
-                                {/* <div className="absolute -bottom-6 -right-6 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-lg">
-                        <div className="text-amber-400 text-2xl">
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStarHalfAlt} />
-                        </div>
-                    </div> */}
                             </div>
                         </div>
 

@@ -41,7 +41,7 @@ function Navbar() {
               className="text-2xl font-bold gradient-text flex items-center"
             >
               {/* <i className="fas fa-code mr-2"></i>  */}
-              DevPortfolio
+              HabibRifqi
             </a>
 
             <nav className="hidden md:flex space-x-8">

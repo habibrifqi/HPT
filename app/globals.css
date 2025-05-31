@@ -234,3 +234,32 @@ html {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+/* Gradient untuk teks dan ikon */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block; /* Agar gradient tidak terpotong */
+}
+
+/* Wrapper ikon (inherit warna dari parent) */
+.icon-wrapper {
+  display: inline-block;
+  color: inherit; /* Mengikuti warna parent (.gradient-text) */
+  margin-left: 8px; /* Jarak dari teks */
+}
+
+/* Pastikan ikon FontAwesome tidak memiliki warna inline */
+.icon-wrapper svg {
+  color: inherit;
+  width: 1em; /* Ukuran konsisten dengan teks */
+  height: 1em;
+}
+
+.gradient-svg {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-mask: url("data:image/svg+xml,...") no-repeat center;
+  mask: url("data:image/svg+xml,...") no-repeat center;
+}
