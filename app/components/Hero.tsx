@@ -17,13 +17,13 @@ function Hero() {
                 className="min-h-screen flex items-center pt-20 relative overflow-hidden"
             >
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-900/90 to-slate-900/20 z-10"></div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-900/90 to-slate-900/20 z-10 dark:block hidden"></div>
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1639762681057-1e71f2a58d57?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
 
-                    {/* <!-- Floating elements --> */}
-                    <div className="absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-indigo-500/20 blur-xl"></div>
-                    <div className="absolute top-1/3 right-1/3 w-12 h-12 rounded-full bg-purple-500/20 blur-xl"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-16 h-16 rounded-full bg-indigo-600/20 blur-xl"></div>
+                    {/* asd */}
+                    <div className="absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-indigo-100/20 blur-xl dark:bg-slate-500/20"></div>
+                    <div className="absolute top-1/3 right-1/3 w-12 h-12 rounded-full bg-purple-100/20 dark:bg-purple-500/20 blur-xl"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-16 h-16 rounded-full bg-indigo-100/20 dark:bg-indigo-600/20 blur-xl"></div>
                 </div>
 
                 <div className="container mx-auto px-6 py-20 relative z-20">

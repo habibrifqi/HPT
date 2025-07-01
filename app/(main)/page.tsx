@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Aboutme from "../components/Aboutme";
 import MySkill from "../components/MySkill";
 import ProjectFutures from "../components/ProjectFutures";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <MySkill />
 
       <ProjectFutures />
+
+      <Contact />
 
 
 

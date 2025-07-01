@@ -17,7 +17,11 @@
   --secondary: #0b0bff; /* Ultramarine */
   --dark: #0f172a;
   --darker: #020617;
+   --light: #ffffff;    /* Warna terang untuk light mode */
+  --lighter: #ffffff;  /* Warna lebih terang untuk light mode */
 }
+
+
 
 .gradient-text {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -26,9 +30,11 @@
   color: transparent;
 }
 
-.gradient-bg {
+.dark .gradient-bg {
   background: linear-gradient(135deg, var(--darker), var(--dark));
 }
+
+
 
 .gradient-border {
   position: relative;
@@ -131,7 +137,7 @@
 }
 
 /* Glass Morphism */
-.glass {
+.dark .glass {
   background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -262,4 +268,60 @@ html {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-mask: url("data:image/svg+xml,...") no-repeat center;
   mask: url("data:image/svg+xml,...") no-repeat center;
+}
+
+
+/* input:focus {
+  outline: none;
+  border-image-source: linear-gradient(var(--primary), var(--secondary));
+  border-width: 2pt;
+  border-image-slice: 2;
+  border-radius: 1.5rem;
+} */
+
+/* Tambahkan di CSS file Anda */
+.gradient-border-input {
+  position: relative;
+  
+  border-radius: 0.5rem;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  transition: all 0.3s ease;
+}
+
+.gradient-border-input input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgb(15 23 42); /* bg-slate-900 */
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  color: white;
+}
+
+.gradient-border-input textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgb(15 23 42); /* bg-slate-900 */
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  color: white;
+}
+
+.gradient-border-input:not(:focus-within) {
+  background: rgb(51 65 85); /* bg-slate-700 */
+}
+
+/* light mode */
+
+.light .gradient-bg {
+  background: linear-gradient(135deg, var(--lighter), var(--light));
+}
+
+.light.glass {
+  background: red;
+  /* backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.1); */
 }

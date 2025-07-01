@@ -165,9 +165,11 @@ interface SkillBarProps {
   color?: string;
   duration?: number;
   delay?: number;
+  key?: number;
 }
 
 const SkillBar = ({
+  key,
   skillName,
   percentage,
   duration = 1.5,
@@ -182,7 +184,7 @@ const SkillBar = ({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Reset animasi ke awal sebelum memulai lagi
+            // Reset animation to start from the beginning
             barControls.start({ width: 0 }).then(() => {
               barControls.start({
                 width: `${percentage}%`,
@@ -194,14 +196,14 @@ const SkillBar = ({
               });
             });
             
-            // Animasi untuk persentase dari 0 ke nilai akhir
+            // Animate the percentage from 0 to the final value
             percentageControls.start({
               opacity: [0, 1],
               scale: [0.8, 1],
               transition: { duration: 1.5, delay }
             });
             
-            // Animasi angka berhitung
+            // Animate the counting number
             const start = 0;
             const end = percentage;
             const durationMs = duration * 1000;
@@ -251,7 +253,7 @@ const SkillBar = ({
   }, [barControls, percentageControls, percentage, duration, delay]);
 
   return (
-    <div ref={ref} className="mb-6">
+    <div ref={ref} key={key} className="mb-6">
       <div className="flex justify-between mb-2">
         <span>{skillName}</span>
         <motion.span 

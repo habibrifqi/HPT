@@ -43,18 +43,18 @@ const AOSInitializer = ({ children }: AOSInitializerProps) => {
       mirror: true, // Animasi akan trigger saat scroll up dan down
     });
 
-    // Fungsi untuk mereset animasi
+    // Function to reset animation
     const resetAnimationOnExit = () => {
       document.querySelectorAll('[data-aos]').forEach((element) => {
         const rect = element.getBoundingClientRect();
         const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
 
         if (!isInViewport) {
-          // Hapus atribut yang mencegah animasi berulang
+          // Remove attribute that prevents animation repetition
           element.removeAttribute('data-aos-animated');
           element.removeAttribute('data-aos');
           
-          // Kembalikan atribut asli setelah microtask
+          // Restore original attribute after microtask
           requestAnimationFrame(() => {
             const originalAos = element.getAttribute('data-aos-original');
             if (originalAos) {
@@ -65,14 +65,14 @@ const AOSInitializer = ({ children }: AOSInitializerProps) => {
       });
     };
 
-    // Simpan nilai data-aos original
+    // Save original data-aos value
     document.querySelectorAll('[data-aos]').forEach((element) => {
       if (!element.getAttribute('data-aos-original')) {
         element.setAttribute('data-aos-original', element.getAttribute('data-aos') || '');
       }
     });
 
-    // Tambahkan event listener dengan debounce untuk performa
+    // Add event listener with debounce for performance
     let timeout: NodeJS.Timeout;
     const debouncedReset = () => {
       clearTimeout(timeout);

@@ -1,10 +1,9 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fa } from '@fortawesome/free-brands-svg-icons'
-import { faLaptopCode, faChartLine } from '@fortawesome/free-solid-svg-icons'
 import SkillBar from './ui/SkillBar'
+import { getAllSkills } from '@/services/skillService';
 
-function MySkill() {
+const MySkill = async function() {
+    const skills  = await getAllSkills();
     return (
         <>
             <section id="skills" className="py-28 mt-40">
@@ -44,6 +43,19 @@ function MySkill() {
                                         <div className="skill-progress" style={{ width: '95%' }}></div>
                                     </div>
                                 </div>
+
+                                {skills.map((data) => (
+                                    // <div key={data.id}>
+                                    //     <div className="flex justify-between mb-2">
+                                    //         <span>{data.name}</span>
+                                    //         <span>{data.proficiency}</span>
+                                    //     </div>
+                                    //     <div className="skill-bar">
+                                    //         <div className="skill-progress" style={{ width: '90%' }}></div>
+                                    //     </div>
+                                    // </div>
+                                    <SkillBar skillName={data.name} key={data.id} percentage={data.proficiency} />
+                                ))}
 
                                 <div>
                                     <div className="flex justify-between mb-2">
