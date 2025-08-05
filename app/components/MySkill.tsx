@@ -3,7 +3,8 @@ import SkillBar from './ui/SkillBar'
 import { getAllSkills } from '@/services/skillService';
 
 const MySkill = async function() {
-    const skills  = await getAllSkills();
+    const skillsTechnical  = await getAllSkills({type: 'technical'});
+    const skillsProfessional  = await getAllSkills({type: 'professionall'});
     return (
         <>
             <section id="skills" className="py-28 mt-40">
@@ -34,58 +35,13 @@ const MySkill = async function() {
                             </h3>
 
                             <div className="space-y-6">
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>JavaScript/TypeScript</span>
-                                        <span>95%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '95%' }}></div>
-                                    </div>
-                                </div>
+                           
 
-                                {skills.map((data) => (
-                                    // <div key={data.id}>
-                                    //     <div className="flex justify-between mb-2">
-                                    //         <span>{data.name}</span>
-                                    //         <span>{data.proficiency}</span>
-                                    //     </div>
-                                    //     <div className="skill-bar">
-                                    //         <div className="skill-progress" style={{ width: '90%' }}></div>
-                                    //     </div>
-                                    // </div>
+                                {skillsTechnical.map((data) => (
                                     <SkillBar skillName={data.name} key={data.id} percentage={data.proficiency} />
                                 ))}
 
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>React & Next.js</span>
-                                        <span>90%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '90%' }}></div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Node.js & Express</span>
-                                        <span>88%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '88%' }}></div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Database Design</span>
-                                        <span>85%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '85%' }}></div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
 
@@ -107,47 +63,13 @@ const MySkill = async function() {
                             </h3>
 
                             <div className="space-y-6">
-                                {/* <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Problem Solving</span>
-                                        <span>97%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '97%' }}></div>
-                                    </div>
-                                </div> */}
+                            
 
-                                <SkillBar skillName="Problem Solving" percentage={97} />
+                                 {skillsProfessional.map((data) => (
+                                    <SkillBar skillName={data.name} key={data.id} percentage={data.proficiency} />
+                                ))}
 
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Team Collaboration</span>
-                                        <span>93%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '93%' }}></div>
-                                    </div>
-                                </div>
 
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Project Management</span>
-                                        <span>87%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '87%' }}></div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Communication</span>
-                                        <span>91%</span>
-                                    </div>
-                                    <div className="skill-bar">
-                                        <div className="skill-progress" style={{ width: '91%' }}></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,7 +105,7 @@ const MySkill = async function() {
                                         fill="url(#gradient)"
                                     /></svg>
                             </span>
-                            <span>Node.js</span>
+                            <span>PostgeySql</span>
                         </div>
                         <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex flex-col items-center card-hover">
                             <span className="icon-wrapper inline-block text-5xl mb-3">
@@ -198,19 +120,100 @@ const MySkill = async function() {
                                         fill="url(#gradient)"
                                     /></svg>
                             </span>
-                            <span>JavaScript</span>
+                            <span>NextJS</span>
                         </div>
                         <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex flex-col items-center card-hover">
-                            <i className="fab fa-aws text-5xl text-indigo-400 mb-3"></i>
-                            <span>AWS</span>
+                             <span className="icon-wrapper inline-block text-5xl mb-3">
+                                <svg role="img" width="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                                            <stop offset="0%" stopColor="var(--primary)" />
+                                            <stop offset="100%" stopColor="var(--secondary)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M13.143 23.585l10.46-5.97-4.752-2.736-10.453 6.019zM24.084 11.374l-4.757-2.736v5.417l4.758 2.737zM24.559 5.078l-4.756 2.736 4.756 2.736 4.755-2.737zM9.911 18.928l2.76-1.589v-11.934l-4.758 2.738v11.934zM7.437 1.846l-4.756 2.737 4.756 2.737 4.753-2.737zM2.204 5.406v18.452l10.464 6.022v-5.471l-5.472-3.096c-0.018-0.013-0.032-0.027-0.051-0.039-0.014-0.013-0.030-0.023-0.044-0.034l-0.001-0.003c-0.015-0.015-0.028-0.031-0.039-0.049l-0.001-0.001c-0.014-0.013-0.025-0.028-0.035-0.045l-0.001-0.001h-0.003c-0.008-0.015-0.016-0.035-0.024-0.055l-0.001-0.004c-0.007-0.015-0.015-0.032-0.022-0.051l-0.001-0.003c-0.004-0.020-0.008-0.045-0.010-0.070l-0-0.002c-0.003-0.015-0.006-0.033-0.008-0.051l-0-0.001v-12.759l-2.757-1.59zM24.085 23.857v-5.422l-10.464 5.974v5.47zM29.789 14.055v-5.417l-4.756 2.737v5.417zM30.725 7.69c0.011 0.038 0.018 0.081 0.018 0.126v0 6.513c-0 0.176-0.095 0.329-0.237 0.411l-0.002 0.001-5.468 3.149v6.241c-0 0.175-0.095 0.328-0.236 0.411l-0.002 0.001-11.416 6.57c-0.024 0.013-0.052 0.025-0.081 0.033l-0.003 0.001-0.030 0.013c-0.036 0.011-0.078 0.017-0.121 0.017s-0.085-0.006-0.125-0.018l0.003 0.001c-0.015-0.004-0.027-0.009-0.039-0.016l0.001 0.001c-0.031-0.011-0.057-0.021-0.082-0.033l0.004 0.002-11.413-6.57c-0.144-0.084-0.239-0.237-0.239-0.412v0-19.548c0-0.044 0.007-0.087 0.019-0.127l-0.001 0.003c0.004-0.015 0.013-0.025 0.018-0.040 0.009-0.029 0.019-0.053 0.030-0.076l-0.001 0.003c0.008-0.016 0.018-0.030 0.029-0.042l-0 0 0.042-0.057 0.047-0.034c0.018-0.015 0.034-0.030 0.052-0.043h0.001l5.708-3.285c0.068-0.040 0.15-0.064 0.237-0.064s0.169 0.024 0.239 0.065l-0.002-0.001 5.71 3.285c0.019 0.013 0.035 0.027 0.051 0.042l-0-0 0.048 0.034c0.016 0.018 0.025 0.038 0.042 0.057 0.012 0.012 0.022 0.026 0.031 0.041l0.001 0.001c0.010 0.020 0.020 0.044 0.029 0.069l0.001 0.004 0.016 0.040c0.011 0.035 0.018 0.076 0.018 0.118 0 0.002 0 0.004-0 0.006v-0 12.208l4.756-2.737v-6.241c0-0.001 0-0.002 0-0.002 0-0.043 0.006-0.085 0.017-0.125l-0.001 0.003c0.004-0.013 0.013-0.025 0.016-0.040 0.010-0.030 0.020-0.054 0.032-0.078l-0.002 0.004c0.009-0.015 0.023-0.025 0.032-0.042 0.015-0.019 0.027-0.038 0.042-0.054 0.014-0.013 0.029-0.025 0.045-0.035l0.001-0.001c0.018-0.013 0.033-0.029 0.052-0.040h0.001l5.708-3.286c0.068-0.040 0.15-0.064 0.237-0.064s0.169 0.024 0.239 0.065l-0.002-0.001 5.708 3.286c0.020 0.013 0.034 0.027 0.053 0.039 0.015 0.013 0.032 0.023 0.046 0.035 0.016 0.018 0.028 0.038 0.043 0.056 0.011 0.012 0.021 0.026 0.030 0.040l0.001 0.001c0.012 0.022 0.022 0.047 0.030 0.073l0.001 0.003c0.008 0.012 0.014 0.025 0.019 0.039l0 0.001z"
+                                        fill="url(#gradient)"
+                                    /></svg>
+                            </span>
+                            <span>Laravel</span>
                         </div>
                         <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex flex-col items-center card-hover">
-                            <i className="fas fa-database text-5xl text-indigo-400 mb-3"></i>
-                            <span>MongoDB</span>
+                            <span className="icon-wrapper inline-block text-5xl mb-3">
+                                <svg role="img" width="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                                            <stop offset="0%" stopColor="var(--primary)" />
+                                            <stop offset="100%" stopColor="var(--secondary)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M30.428 14.663l-13.095-13.094c-0.35-0.349-0.833-0.565-1.367-0.565s-1.017 0.216-1.367 0.565l0-0-2.713 2.718 3.449 3.449c0.22-0.077 0.473-0.121 0.737-0.121 1.269 0 2.297 1.028 2.297 2.297 0 0.269-0.046 0.526-0.131 0.766l0.005-0.016 3.322 3.324c0.222-0.079 0.479-0.125 0.746-0.125 1.268 0 2.296 1.028 2.296 2.296s-1.028 2.296-2.296 2.296c-1.268 0-2.296-1.028-2.296-2.296 0-0.313 0.063-0.611 0.176-0.883l-0.006 0.015-3.11-3.094v8.154c0.764 0.385 1.279 1.163 1.279 2.061 0 1.27-1.030 2.3-2.3 2.3s-2.3-1.030-2.3-2.3c0-0.634 0.256-1.207 0.671-1.623l-0 0c0.211-0.211 0.462-0.382 0.741-0.502l0.015-0.006v-8.234c-0.842-0.354-1.422-1.173-1.422-2.126 0-0.32 0.065-0.624 0.183-0.901l-0.006 0.015-3.389-3.405-8.98 8.974c-0.348 0.351-0.562 0.834-0.562 1.368s0.215 1.017 0.563 1.368l13.096 13.092c0.349 0.35 0.832 0.566 1.366 0.566s1.016-0.216 1.366-0.566l13.034-13.034c0.35-0.349 0.567-0.833 0.567-1.366s-0.217-1.017-0.567-1.366l-0-0z"
+                                        fill="url(#gradient)"
+                                    /></svg>
+                            </span>
+                            <span>Git</span>
                         </div>
                         <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex flex-col items-center card-hover">
-                            <i className="fab fa-docker text-5xl text-indigo-400 mb-3"></i>
-                            <span>Docker</span>
+                             <span className="icon-wrapper inline-block text-5xl mb-3">
+                                <svg
+                                  version="1.1"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  x="0px"
+                                  y="0px"
+                                  viewBox="0 0 477.065 477.065"
+                                >
+                                    <defs>
+                                        <linearGradient
+                                            id="gradient"
+                                            x1="0%"
+                                            y1="50%"
+                                            x2="100%"
+                                            y2="50%"
+                                        >
+                                            <stop offset="0%" stopColor="var(--primary)" />
+                                            <stop offset="100%" stopColor="var(--secondary)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <g fill="url(#gradient)">
+                                        <path
+                                            d="M285.447,102.43l8.201-17.199c6.77-14.21,17.982-25.375,31.788-32.037h-60.099c5.047,9.139,4.487,19.28-4.116,29.312
+		C273.444,82.506,283.289,91.225,285.447,102.43z"
+                                        />
+                                        <path
+                                            d="M451.613,53.194h-56.761c21.415,17.028,19.008,40.074,1.818,47.24l-8.495,3.541c43.761,0,43.467-4.038,43.467,23.022
+		c5.823,12.082,5.389,25.918,0,37.699v144.151c0,6.149-4.986,11.135-11.135,11.135H56.559c-6.149,0-11.135-4.985-11.135-11.135
+		V152.559c-6.289-9.24-4.224-18.03-4.224-45.416c0-13.511,10.933-24.637,24.676-24.637c-7.501-7.493-9.705-19.101-4.084-29.312
+		h-36.34C11.399,53.194,0,64.592,0,78.646v269.218c0,14.054,11.399,25.453,25.453,25.453h168.696l-22.719,54.664h-10.421
+		c-9.053,0-16.398,7.345-16.398,16.4c0,9.053,7.345,16.398,16.398,16.398h155.046c9.055,0,16.4-7.345,16.4-16.398
+		c0-9.055-7.345-16.4-16.4-16.4h-10.419l-22.719-54.664h168.696c14.053,0,25.451-11.399,25.451-25.453V78.646
+		C477.065,64.592,465.666,53.194,451.613,53.194z M369.291,356.849c-6.585,0-11.927-5.343-11.927-11.927
+		c0-6.585,5.342-11.927,11.927-11.927c6.585,0,11.927,5.342,11.927,11.927C381.218,351.506,375.876,356.849,369.291,356.849z
+		 M408.052,356.849c-6.585,0-11.927-5.343-11.927-11.927c0-6.585,5.342-11.927,11.927-11.927c6.585,0,11.927,5.342,11.927,11.927
+		C419.979,351.506,414.638,356.849,408.052,356.849z"
+                                        />
+                                        <path
+                                            d="M89.792,83.919c-2.438,4.597-4.472,9.434-6.025,14.489c-11.741,0-26.663-2.71-26.663,8.735
+		c0,44.197-4.503,40.369,26.647,40.369c1.57,5.055,3.603,9.901,6.041,14.496c-18.526,18.52-20.95,16.804-5.186,32.558
+		c9.861-10.669,19.116-12.564,48.109-24.645c-15.28-10.071-25.405-27.332-25.405-46.954c0-31.02,25.235-56.255,56.247-56.255
+		c34.956,0,62.181,31.921,55.145,67.374l51.324-21.4c0-16.593-4.457-14.279-26.665-14.279c-1.552-5.055-3.602-9.9-6.04-14.497
+		c8.293-8.3,20.794-16.966,12.703-25.057c-31.432-31.439-25.375-31.696-47.427-9.652c-4.597-2.438-9.427-4.48-14.504-6.025
+		c0-11.717,2.702-26.664-8.713-26.664c-44.197,0-40.361-4.519-40.361,26.664c-5.062,1.545-9.907,3.587-14.504,6.025
+		c-8.293-8.3-16.942-20.778-25.049-12.703C68.238,67.714,67.71,61.851,89.792,83.919z"
+                                        />
+                                        <path
+                                            d="M163.557,82.614c-22.253,0-40.345,18.099-40.345,40.353c0,18.433,12.485,33.853,29.397,38.661l46.092-19.21
+		C214.059,114.737,193.467,82.614,163.557,82.614z"
+                                        />
+                                        <path
+                                            d="M294.92,119.543l-188.294,78.479c-36.308,15.133-13.914,70.86,23.123,55.456l188.31-78.471
+		c49.074,17.192,51.092,19.342,88.1-4.123c20.328-12.897,15.668-45.159,3.198-40.004l-32.984,13.736
+		c-5.761,2.406-12.423-0.312-14.846-6.127c-16.71-40.066-19.24-32.62,29.025-52.73c12.098-5.039-6.957-31.354-30.671-25.88
+		l-16.368,3.735C314.379,70.268,307.81,92.452,294.92,119.543z"
+                                        />
+                                    </g>
+                                </svg>
+                                {/* fill="url(#gradient)" */}
+                            </span>
+                            <span>Computer Service</span>
                         </div>
                     </div>
                 </div>

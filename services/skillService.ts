@@ -22,6 +22,7 @@ export async function getAllSkills(
         created_at
       FROM skills
       where category = 'technical'
+      and active_st = true
       ORDER BY proficiency DESC, created_at DESC
     `;
     return skills;
@@ -35,6 +36,7 @@ export async function getAllSkills(
         created_at
       FROM skills
       where category = 'professionall'
+      and active_st = true
       ORDER BY proficiency DESC, created_at DESC
     `;
     return skills;
