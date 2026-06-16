@@ -14,7 +14,6 @@ const TypingText = () => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
-  const [blink, setBlink] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
@@ -24,14 +23,13 @@ const TypingText = () => {
     const updatedText = currentWord.substring(0, charIndex);
     setText(updatedText);
 
-    let typingSpeed = isDeleting ? 50 : 100;
+    const typingSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentWord.length) {
       setIsPaused(true);
       setTimeout(() => {
         setIsPaused(false);
         setIsDeleting(true);
-        setBlink(false);
       }, 1000);
       return;
     }
@@ -39,7 +37,6 @@ const TypingText = () => {
     if (isDeleting && charIndex === 0) {
       setIsDeleting(false);
       setWordIndex((prev) => (prev + 1) % words.length);
-      setBlink(true);
     }
 
     const timer = setTimeout(() => {

@@ -30,7 +30,7 @@ function Hero() {
                     <div className="flex flex-col md:flex-row items-center">
                         <div className="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
                             <h1 className="text-4xl md:text-6xl font-bold mb-2 leading-tight">
-                                Hi, I'm <span className="gradient-text">Alex Carter</span>
+                                Hi, I&apos;m <span className="gradient-text">Alex Carter</span>
                             </h1>
                             <TypingText />
                             <p className="text-lg mb-8 max-w-lg opacity-90">

@@ -45,6 +45,7 @@ const useTypingAnimation = (words: string[], typingSpeed = 100, deletingSpeed = 
 
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayText, currentIndex, isDeleting]);
 
   return { displayText, showCursor };

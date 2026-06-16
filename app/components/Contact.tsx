@@ -12,9 +12,9 @@ function Contact() {
 
                     <div className="flex flex-col lg:flex-row gap-12">
                         <div className="lg:w-1/2" data-aos="fade-right">
-                            <h3 className="text-2xl font-semibold mb-6">Let's work together</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Let&apos;s work together</h3>
                             <p className="mb-8 text-lg opacity-90">
-                                I'm currently available for freelance projects or full-time positions. If you have a website or app idea that needs development, I'd love to hear about it.
+                                I&apos;m currently available for freelance projects or full-time positions. If you have a website or app idea that needs development, I&apos;d love to hear about it.
                             </p>
 
                             <div className="space-y-6">

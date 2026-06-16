@@ -1,7 +1,7 @@
 // hooks/useSmoothScroll.ts
-import { useEffect } from 'react';
+import { useEffect, DependencyList } from 'react';
 
-export const useSmoothScroll = (dependencies: any[] = []) => {
+export const useSmoothScroll = (dependencies: DependencyList = []) => {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLAnchorElement;
@@ -11,10 +11,6 @@ export const useSmoothScroll = (dependencies: any[] = []) => {
         const targetElement = document.querySelector(target.hash);
         
         if (targetElement) {
-            // Perhitungan posisi yang lebih akurat
-            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - 80; // Sesuaikan dengan tinggi navbar
-            
             targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -27,10 +23,10 @@ export const useSmoothScroll = (dependencies: any[] = []) => {
     };
 
     const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => link.addEventListener('click', handleClick));
+    links.forEach(link => link.addEventListener('click', handleClick as EventListener));
 
     return () => {
-      links.forEach(link => link.removeEventListener('click', handleClick));
+      links.forEach(link => link.removeEventListener('click', handleClick as EventListener));
     };
   }, dependencies);
 };
