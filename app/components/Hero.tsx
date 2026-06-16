@@ -104,7 +104,7 @@ function Hero() {
                                 {/* Main image with enhanced effects */}
                                 <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-4 border-white/10 shadow-2xl">
                                     <Image
-                                        src="https://scontent.fsrg10-1.fna.fbcdn.net/v/t1.6435-9/33115509_1249449891855998_4707836291641769984_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeExPJhlQ5-a5knuTg3Xyuy5nUgRa2DOzDadSBFrYM7MNrvifRMqOo-4zm1noHp84ibyrDEUilwkhnBi_UipQ9li&_nc_ohc=fx4P_VN8RroQ7kNvwHd5ved&_nc_oc=Adlg7DvuGt7DghC3PAJ9Lwfp94zRlPDk_iCHwf7bD2u7XU4WKMjmT4r7bUDUNctlOms&_nc_zt=23&_nc_ht=scontent.fsrg10-1.fna&_nc_gid=ctGYC9YsOvVPSAIP_zwlXA&oh=00_AfHOaIXZo1OWolikGAwrczEMZ1ZjGdeWejwuur-UGGuxTg&oe=684048FD"
+                                        src="https://scontent.fjog8-1.fna.fbcdn.net/v/t1.6435-1/33115509_1249449891855998_4707836291641769984_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s320x320&_nc_cat=100&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeExPJhlQ5-a5knuTg3Xyuy5nUgRa2DOzDadSBFrYM7MNrvifRMqOo-4zm1noHp84ibyrDEUilwkhnBi_UipQ9li&_nc_ohc=vIVOwEOTFQcQ7kNvwE6ieHP&_nc_oc=AdoL5iQw7zkn4dfkNGFC9VrjM1RkxxQXYOBAT50Xipp99SFGD6QUAr1j7SPmhT8SYX8&_nc_zt=24&_nc_ht=scontent.fjog8-1.fna&_nc_gid=M4q53C0TCZLQRgNm-bhlJg&_nc_ss=7b2a8&oh=00_Af8OsJN8nSi10va3MaQ0G16XO_6tPjSh4ak0sOriptjmtA&oe=6A589937"
                                         width={1920}
                                         height={1080}
                                         alt="Profile"

@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Aboutme from "../components/Aboutme";
@@ -23,25 +22,11 @@ export default function Home() {
 
       <Contact />
 
-
-
       {/* <!-- Skills Section --> */}
-      
-
-
-
-
-
-
-
 
       {/* <section id="skills" className="h-screen">
        <h1>asdsda</h1>
     </section> */}
-     
-
-
     </>
-
   );
 }
