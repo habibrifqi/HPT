@@ -1,0 +1,38 @@
+# ============================================
+# Environment Variables — Local Development
+# ============================================
+# Salin file ini dan sesuaikan nilainya
+# JANGAN commit file ini ke Git!
+# ============================================
+
+# PostgreSQL Database Configuration
+# POSTGRES_HOST=localhost
+# POSTGRES_DATABASE=habibporto_db
+# POSTGRES_USER=postgres
+# POSTGRES_PASSWORD=your_password_here
+
+# Recommended for most uses
+DATABASE_URL=postgres://neondb_owner:npg_JjWiH34YshSA@ep-round-dew-a1z3f3xu-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+# For uses requiring a connection without pgbouncer
+DATABASE_URL_UNPOOLED=postgresql://neondb_owner:npg_JjWiH34YshSA@ep-round-dew-a1z3f3xu.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+# Parameters for constructing your own connection string
+PGHOST=ep-round-dew-a1z3f3xu-pooler.ap-southeast-1.aws.neon.tech
+PGHOST_UNPOOLED=ep-round-dew-a1z3f3xu.ap-southeast-1.aws.neon.tech
+PGUSER=neondb_owner
+PGDATABASE=neondb
+PGPASSWORD=npg_JjWiH34YshSA
+
+# Parameters for Vercel Postgres Templates
+POSTGRES_URL=postgres://neondb_owner:npg_JjWiH34YshSA@ep-round-dew-a1z3f3xu-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+POSTGRES_URL_NON_POOLING=postgres://neondb_owner:npg_JjWiH34YshSA@ep-round-dew-a1z3f3xu.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+POSTGRES_USER=neondb_owner
+POSTGRES_HOST=ep-round-dew-a1z3f3xu-pooler.ap-southeast-1.aws.neon.tech
+POSTGRES_PASSWORD=npg_JjWiH34YshSA
+POSTGRES_DATABASE=neondb
+POSTGRES_URL_NO_SSL=postgres://neondb_owner:npg_JjWiH34YshSA@ep-round-dew-a1z3f3xu-pooler.ap-southeast-1.aws.neon.tech/neondb
+POSTGRES_PRISMA_URL=postgres://neondb_owner:npg_JjWiH34YshSA@ep-round-dew-a1z3f3xu-pooler.ap-southeast-1.aws.neon.tech/neondb?connect_timeout=15&sslmode=require
+
+# Jika menggunakan Supabase / Neon / Railway,
+# ganti nilai di atas dengan credentials dari dashboard mereka.

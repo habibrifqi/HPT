@@ -29,7 +29,7 @@ function Navbar() {
         console.log('clicked outside');
     });
   
-    useSmoothScroll([isOpen]);
+    useSmoothScroll();
 
   return (
     <>

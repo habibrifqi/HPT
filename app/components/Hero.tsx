@@ -9,6 +9,21 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import TypingText from "./TypingText";
 
+const PARTICLES = [
+    { top: "10%", left: "20%", duration: "6s", scale: 0.8 },
+    { top: "30%", left: "80%", duration: "12s", scale: 1.2 },
+    { top: "50%", left: "40%", duration: "9s", scale: 0.5 },
+    { top: "70%", left: "10%", duration: "14s", scale: 1.5 },
+    { top: "20%", left: "60%", duration: "8s", scale: 1.1 },
+    { top: "90%", left: "30%", duration: "11s", scale: 0.7 },
+    { top: "40%", left: "90%", duration: "7s", scale: 1.3 },
+    { top: "80%", left: "70%", duration: "13s", scale: 0.9 },
+    { top: "15%", left: "45%", duration: "10s", scale: 1.4 },
+    { top: "65%", left: "85%", duration: "5s", scale: 0.6 },
+    { top: "85%", left: "15%", duration: "15s", scale: 1.0 },
+    { top: "55%", left: "55%", duration: "11s", scale: 1.2 },
+];
+
 function Hero() {
     return (
         <>
@@ -116,16 +131,15 @@ function Hero() {
 
                                 {/* Floating particles effect */}
                                 <div className="absolute -inset-4 z-0 opacity-20">
-                                    {[...Array(12)].map((_, i) => (
+                                    {PARTICLES.map((particle, i) => (
                                         <div
                                             key={i}
                                             className="absolute w-2 h-2 bg-white rounded-full"
                                             style={{
-                                                top: `${Math.random() * 100}%`,
-                                                left: `${Math.random() * 100}%`,
-                                                animation: `float ${5 + Math.random() * 10
-                                                    }s linear infinite`,
-                                                transform: `scale(${0.5 + Math.random() * 1.5})`,
+                                                top: particle.top,
+                                                left: particle.left,
+                                                animation: `float ${particle.duration} linear infinite`,
+                                                transform: `scale(${particle.scale})`,
                                             }}
                                         ></div>
                                     ))}

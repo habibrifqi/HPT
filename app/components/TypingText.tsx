@@ -13,38 +13,35 @@ const TypingText = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState("");
-  const [isPaused, setIsPaused] = useState(false);
+
+  const currentWord = words[wordIndex];
+  const text = currentWord.substring(0, charIndex);
 
   useEffect(() => {
-    if (isPaused) return;
-
-    const currentWord = words[wordIndex];
-    const updatedText = currentWord.substring(0, charIndex);
-    setText(updatedText);
-
-    const typingSpeed = isDeleting ? 50 : 100;
-
+    // If we've finished typing a word, pause for 1000ms before deleting
     if (!isDeleting && charIndex === currentWord.length) {
-      setIsPaused(true);
-      setTimeout(() => {
-        setIsPaused(false);
+      const timer = setTimeout(() => {
         setIsDeleting(true);
       }, 1000);
-      return;
+      return () => clearTimeout(timer);
     }
 
+    // If we've finished deleting a word, pause for 200ms before starting next word
     if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setWordIndex((prev) => (prev + 1) % words.length);
+      const timer = setTimeout(() => {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }, 200);
+      return () => clearTimeout(timer);
     }
 
+    const typingSpeed = isDeleting ? 50 : 100;
     const timer = setTimeout(() => {
       setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, wordIndex, isPaused]);
+  }, [charIndex, isDeleting, wordIndex, currentWord.length]);
 
   return (
     <h2 className="text-2xl md:text-3xl mb-4 mt-0 pt-0">
