@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const words = [
-  "Fullstack Developer",
-  "UI/UX Designer",
-  "Tech Enthusiast",
-  "Problem Solver",
+  "Fullstack Web Developer",
+  "Programmer",
+  // "Tech Enthusiast",
+  // "Problem Solver",
 ];
 
 const TypingText = () => {

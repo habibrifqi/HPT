@@ -1,32 +1,36 @@
 // hooks/useSmoothScroll.ts
-import { useEffect, DependencyList } from 'react';
+import { useEffect } from 'react';
 
-export const useSmoothScroll = (dependencies: DependencyList = []) => {
+export const useSmoothScroll = () => {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLAnchorElement;
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
       
-      if (target.hash && target.href.startsWith(`${window.location.origin}#`)) {
+      if (
+        target.hash && 
+        (target.href.startsWith(`${window.location.origin}${window.location.pathname}#`) || 
+         target.href.startsWith(`${window.location.origin}/#`))
+      ) {
         e.preventDefault();
         const targetElement = document.querySelector(target.hash);
         
         if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
   
-            // Update URL
-            window.history.pushState({}, '', target.hash);
-          }
+          // Update URL
+          window.history.pushState({}, '', target.hash);
+        }
       }
     };
 
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => link.addEventListener('click', handleClick as EventListener));
+    document.addEventListener('click', handleClick);
 
     return () => {
-      links.forEach(link => link.removeEventListener('click', handleClick as EventListener));
+      document.removeEventListener('click', handleClick);
     };
-  }, dependencies);
+  }, []);
 };
